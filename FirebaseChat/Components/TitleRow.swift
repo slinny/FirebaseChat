@@ -30,7 +30,6 @@ struct TitleRow: View {
                 
                 Text("Online")
                     .font(.caption)
-                    .foregroundStyle(Color.gray)
             }
             
             Spacer()

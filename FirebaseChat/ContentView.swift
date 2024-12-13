@@ -11,7 +11,12 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TitleRow()
-            Spacer()
+            
+            ScrollView {
+                ForEach(Message.mockData) { message in
+                    MessageBubble(message: message)
+                }
+            }
         }
     }
 }
