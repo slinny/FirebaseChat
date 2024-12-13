@@ -24,7 +24,7 @@ struct MessageBubble: View {
             .frame(maxWidth: 300, alignment: message.received ? .leading : .trailing)
             
             if showTime {
-                Text("\(message.timeStamp.formatted(.dateTime.hour().minute()))")
+                Text("\(message.timestamp.formatted(.dateTime.hour().minute()))")
                     .foregroundStyle(Color.primary)
                     .padding(.horizontal)
             }
@@ -38,8 +38,8 @@ struct MessageBubble: View {
 }
 
 #Preview {
-    MessageBubble(message: Message(id: "id", text: "text Find definitions and references for functions and other symbols in this file by clicking a symbol below or in the code.", received: true, timeStamp: Date()))
-    MessageBubble(message: Message(id: "id", text: "text ", received: true, timeStamp: Date()))
-    MessageBubble(message: Message(id: "id", text: "text ", received: false, timeStamp: Date()))
-    MessageBubble(message: Message(id: "id", text: "text Find definitions and references for functions and other symbols in this file by clicking a symbol below or in the code.", received: false, timeStamp: Date()))
+    MessageBubble(message: Message(id: "id", text: "text Find definitions and references for functions and other symbols in this file by clicking a symbol below or in the code.", received: true, timestamp: Date()))
+    MessageBubble(message: Message(id: "id", text: "text ", received: true, timestamp: Date()))
+    MessageBubble(message: Message(id: "id", text: "text ", received: false, timestamp: Date()))
+    MessageBubble(message: Message(id: "id", text: "text Find definitions and references for functions and other symbols in this file by clicking a symbol below or in the code.", received: false, timestamp: Date()))
 }

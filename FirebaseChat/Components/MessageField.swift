@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+import FirebaseMessaging
 
 struct MessageField: View {
+    @EnvironmentObject var messageManager: MessageManager
     @State private var message = ""
 
     var body: some View {
@@ -16,6 +19,7 @@ struct MessageField: View {
             CustomTextField(placeholder: Text("Enter your message here"), text: $message)
 
             Button {
+                messageManager.sendMessage(text: message)
                 message = ""
             } label: {
                 Image(systemName: "paperplane.fill")
