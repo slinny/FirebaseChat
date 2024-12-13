@@ -18,7 +18,11 @@ struct TitleRow: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 50, height: 50)
-                    .cornerRadius(50)
+                    .clipShape(.circle)
+                    .background(
+                        Circle()
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
             } placeholder: {
                 ProgressView()
             }

@@ -17,6 +17,8 @@ struct ContentView: View {
                     MessageBubble(message: message)
                 }
             }
+            
+            MessageField()
         }
     }
 }
