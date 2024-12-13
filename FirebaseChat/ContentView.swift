@@ -14,9 +14,18 @@ struct ContentView: View {
         VStack {
             TitleRow()
             
-            ScrollView {
-                ForEach(messageManager.messages) { message in
-                    MessageBubble(message: message)
+            ScrollViewReader { proxy in
+                ScrollView {
+                    ForEach(messageManager.messages) { message in
+                        MessageBubble(message: message)
+                    }
+                }
+                .onChange(of: messageManager.messages.count) {
+                    withAnimation {
+                        if let lastMessageId = messageManager.messages.last?.id {
+                            proxy.scrollTo(lastMessageId, anchor: .bottom)
+                        }
+                    }
                 }
             }
             
