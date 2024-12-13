@@ -5,14 +5,6 @@
 //  Created by Siran Li on 12/13/24.
 //
 
-
-//
-//  TitleRow.swift
-//  FirebaseChat
-//
-//  Created by Siran Li on 12/13/24.
-//
-
 import SwiftUI
 
 struct TitleRow: View {
